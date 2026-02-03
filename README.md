@@ -1,4 +1,4 @@
-# got-style
+# got-style [![GoDoc](https://godoc.org/github.com/binarysoupdev/got-style?status.svg)](https://pkg.go.dev/github.com/binarysoupdev/got-style)
 
 The `got-style` package provides a simple and semantic method to style terminal outputs in go. Under the hood, the package utilizes ANSI style modes to format but encapsulates them into a user-friendly API.
 
