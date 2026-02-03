@@ -9,6 +9,8 @@ See package docs for full documentation.
 Use the style constants to create new style objects. Then chain with the built in print or format functions to display to terminal.
 
 ```go
+import "github.com/binarysoupdev/got-style/style"
+
 func main() {
     style.New(style.BOLD, style.GREEN).Println("Success Message!")
 }
@@ -17,6 +19,8 @@ func main() {
 Several pre-built styles are also included for convenience.
 
 ```go
+import "github.com/binarysoupdev/got-style/style"
+
 func main() {
     style.BoldSuccess.Println("Success Message!")
 }
