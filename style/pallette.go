@@ -4,24 +4,24 @@ package style
 
 var None = New()
 
-var Bold = New(BOLD)
-var Underline = New(UNDERLINE)
-var Title = New(BOLD, UNDERLINE)
+var Bold = New(BOLD)             // (Bold)
+var Underline = New(UNDERLINE)   // (Underline)
+var Title = New(BOLD, UNDERLINE) // (Bold, Underline)
 
-var BoldSuccess = New(BOLD, GREEN)
-var Success = New(GREEN)
+var BoldSuccess = New(BOLD, GREEN) // (Bold, Green)
+var Success = New(GREEN)           // (Green)
 
-var BoldWarning = New(BOLD, YELLOW)
-var Warning = New(YELLOW)
+var BoldWarning = New(BOLD, YELLOW) // (Bold, Yellow)
+var Warning = New(YELLOW)           // (Yellow)
 
-var BoldError = New(BOLD, RED)
-var Error = New(RED)
+var BoldError = New(BOLD, RED) // (Bold, Red)
+var Error = New(RED)           // (Red)
 
-var BoldCreate = New(BOLD, GREEN)
-var Create = New(GREEN)
+var BoldCreate = New(BOLD, GREEN) // (Bold, Green)
+var Create = New(GREEN)           // (Green)
 
-var BoldDelete = New(BOLD, RED)
-var Delete = New(RED)
+var BoldDelete = New(BOLD, RED) // (Bold, Red)
+var Delete = New(RED)           // (Red)
 
-var BoldInfo = New(BOLD, CYAN)
-var Info = New(CYAN)
+var BoldInfo = New(BOLD, CYAN) // (Bold, Cyan)
+var Info = New(CYAN)           // (Cyan)
