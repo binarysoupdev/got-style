@@ -5,9 +5,10 @@ import (
 	"strings"
 )
 
-// Format the provided string using the style.
-// Return as a new string.
-func (s Style) Sprint(str string) string {
+// Format as a string, first using fmt, then using the style.
+func (s Style) Sprint(a ...any) string {
+	str := fmt.Sprint(a...)
+
 	if s.IsEmpty() {
 		return str
 	} else {
@@ -15,23 +16,22 @@ func (s Style) Sprint(str string) string {
 	}
 }
 
-// First format using fmt package formatting, then format using the style.
-// Return as a new string.
+// Format as a string, first using fmt, then using the style.
 func (s Style) Sprintf(format string, a ...any) string {
 	return s.Sprint(fmt.Sprintf(format, a...))
 }
 
-// Write the provided string to stdout using the style.
-func (s Style) Print(str string) {
-	fmt.Print(s.Sprint(str))
+// Format to stdout, first using fmt, then using the style.
+func (s Style) Print(a ...any) {
+	fmt.Print(s.Sprint(a...))
 }
 
-// Write the provided string (with new line) to stdout using the style.
-func (s Style) Println(str string) {
-	fmt.Println(s.Sprint(str))
+// Format to stdout (with new line), first using fmt, then using the style.
+func (s Style) Println(a ...any) {
+	fmt.Println(s.Sprint(a...))
 }
 
-// First format using fmt package formatting, then write to stdout using the style.
+// Format to stdout, first using fmt, then using the style.
 func (s Style) Printf(format string, a ...any) {
 	fmt.Print(s.Sprintf(format, a...))
 }
