@@ -7,31 +7,48 @@ import (
 
 // Format the provided string using the style.
 // Return as a new string.
-func (sty Style) Format(s string) string {
-	if sty.IsEmpty() {
-		return s
+func (s Style) Sprint(str string) string {
+	if s.IsEmpty() {
+		return str
+	} else {
+		return fmt.Sprintf("\x1B[%sm%s\x1B[0m", strings.Join(s, ";"), str)
 	}
-
-	return fmt.Sprintf("\x1B[%sm%s\x1B[0m", strings.Join(sty, ";"), s)
 }
 
 // First format using fmt package formatting, then format using the style.
 // Return as a new string.
-func (sty Style) FormatF(format string, a ...any) string {
-	return sty.Format(fmt.Sprintf(format, a...))
+func (s Style) Sprintf(format string, a ...any) string {
+	return s.Sprint(fmt.Sprintf(format, a...))
 }
 
-// Print the provided string to the console using the style.
-func (sty Style) Print(s string) {
-	fmt.Print(sty.Format(s))
+// Write the provided string to stdout using the style.
+func (s Style) Print(str string) {
+	fmt.Print(s.Sprint(str))
 }
 
-// Print the provided string (with new line) to the console using the style.
-func (sty Style) Println(s string) {
-	fmt.Println(sty.Format(s))
+// Write the provided string (with new line) to stdout using the style.
+func (s Style) Println(str string) {
+	fmt.Println(s.Sprint(str))
 }
 
-// First format using fmt package formatting, then print to the console using the style.
-func (sty Style) PrintF(format string, a ...any) {
-	fmt.Print(sty.FormatF(format, a...))
+// First format using fmt package formatting, then write to stdout using the style.
+func (s Style) Printf(format string, a ...any) {
+	fmt.Print(s.Sprintf(format, a...))
+}
+
+//============================================
+
+// Deprecated: use Sprint instead.
+func (s Style) Format(str string) string {
+	return s.Sprint(str)
+}
+
+// Deprecated: use Sprintf instead.
+func (s Style) FormatF(format string, a ...any) string {
+	return s.Sprintf(format, a...)
+}
+
+// Deprecated: use Printf instead.
+func (s Style) PrintF(format string, a ...any) {
+	s.Printf(format, a...)
 }
