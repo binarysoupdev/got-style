@@ -4,7 +4,7 @@ package style
 // The Style type is a slice of strings representing the ANSI style modes.
 type Style []string
 
-// ANSI style mode constants.
+// ANSI style mode constant.
 const (
 	BOLD      = "1"
 	DIM       = "2"
@@ -27,6 +27,6 @@ func New(mod ...string) Style {
 }
 
 // Returns whether the style is empty (has no modes).
-func (sty Style) IsEmpty() bool {
-	return len(sty) == 0
+func (s Style) IsEmpty() bool {
+	return len(s) == 0
 }
